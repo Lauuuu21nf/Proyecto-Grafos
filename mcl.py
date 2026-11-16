@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import networkx as nx
 
-RED = "db/red_expandida.tsv"
+RED = "red_expandida.tsv"
 SEMILLA_LOUVAIN = 42
 
 # Red
@@ -30,7 +30,7 @@ nodos = list(C.nodes())
 print(f"Comunidad funcional: {len(nodos)} proteínas, {C.number_of_edges()} aristas")
 
 # las referencias
-corum = pd.read_csv("db/corum_allComplexes.txt", sep='\t', low_memory=False)
+corum = pd.read_csv("corum_allComplexes.txt", sep='\t', low_memory=False)
 corum = corum[corum.organism == "Human"]
 B_corum = set(corum[corum.complex_name ==
                     "FA core complex (Fanconi anemia core complex)"]
